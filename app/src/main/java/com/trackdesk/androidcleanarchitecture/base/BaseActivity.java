@@ -12,11 +12,11 @@ public abstract class BaseActivity extends DaggerActivity implements BaseView {
 
     @Override
     public String getViewId() {
-        return null;
+        return viewId;
     }
 
     @Override
     public boolean isRecreated() {
-        return false;
+        return isViewRecreated;
     }
 }

@@ -14,10 +14,10 @@ buildscript {
     }
     ext {
         rxJavaVersion = "2.2.10"
-        rxJavaAndroid = "2.1.1"
+        rxAndroidVersion = "2.1.1"
         libs = [
                 rxJava: ('io.reactivex.rxjava2:rxjava:' + rxJavaVersion),
-                rxJavaAndroid: ('io.reactivex.rxjava2:rxandroid:' + rxJavaAndroid)
+                rxJavaAndroid: ('io.reactivex.rxjava2:rxandroid:' + rxAndroidVersion)
         ]
     }
 }
@@ -27,6 +27,13 @@ allprojects {
         google()
         jcenter()
         
+    }
+
+    project.ext {
+        buildToolsVersion = "29.0.1"
+        minSdkVersion = 23
+        targetSdkVersion = 29
+        compileSdkVersion = 29
     }
 }
 
