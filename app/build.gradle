@@ -1,12 +1,17 @@
 apply plugin: 'com.android.application'
 
+def _compileSdkVersion   = project.ext.compileSdkVersion
+def _buildToolsVersion   = project.ext.buildToolsVersion
+def _minSdkVersion       = project.ext.minSdkVersion
+def _targetSdkVersion    = project.ext.targetSdkVersion
+
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.1"
+    compileSdkVersion _compileSdkVersion
+    buildToolsVersion _buildToolsVersion
     defaultConfig {
         applicationId "com.trackdesk.androidcleanarchitecture"
-        minSdkVersion 23
-        targetSdkVersion 29
+        minSdkVersion _minSdkVersion
+        targetSdkVersion _targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
