@@ -5,6 +5,9 @@ def _buildToolsVersion   = project.ext.buildToolsVersion
 def _minSdkVersion       = project.ext.minSdkVersion
 def _targetSdkVersion    = project.ext.targetSdkVersion
 
+def _retrofitVersion     = project.ext.retrofitVersion
+def _retrofitGsonVersion = project.ext.retrofitGsonVersion
+
 android {
     compileSdkVersion _compileSdkVersion
     buildToolsVersion _buildToolsVersion
@@ -34,8 +37,8 @@ dependencies {
     implementation libs.appCompat
 
     // begin api client section
-    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation 'com.squareup.retrofit2:retrofit:' + _retrofitVersion
+    implementation 'com.squareup.retrofit2:converter-gson:' + _retrofitGsonVersion
     // end api client section
 
     // begin framework dependencies section

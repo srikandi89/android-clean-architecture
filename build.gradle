@@ -40,10 +40,12 @@ allprojects {
     }
 
     project.ext {
-        buildToolsVersion = "29.0.1"
-        minSdkVersion = 23
-        targetSdkVersion = 29
-        compileSdkVersion = 29
+        buildToolsVersion      = "29.0.1"
+        minSdkVersion          = 23
+        targetSdkVersion       = 29
+        compileSdkVersion      = 29
+        retrofitVersion        = "2.6.0"
+        retrofitGsonVersion    = "2.6.0"
     }
 }
 
