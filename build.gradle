@@ -12,6 +12,14 @@ buildscript {
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+    ext {
+        rxJavaVersion = "2.2.10"
+        rxJavaAndroid = "2.1.1"
+        libs = [
+                rxJava: ('io.reactivex.rxjava2:rxjava:' + rxJavaVersion),
+                rxJavaAndroid: ('io.reactivex.rxjava2:rxandroid:' + rxJavaAndroid)
+        ]
+    }
 }
 
 allprojects {
