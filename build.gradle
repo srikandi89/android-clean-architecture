@@ -20,6 +20,7 @@ buildscript {
         jUnitVersion            = "4.12"
         testRunnerVersion       = "1.2.0"
         espressoCoreVersion     = "3.2.0"
+
         libs = [
                 rxJava: ('io.reactivex.rxjava2:rxjava:' + rxJavaVersion),
                 rxJavaAndroid: ('io.reactivex.rxjava2:rxandroid:' + rxAndroidVersion),
@@ -40,12 +41,16 @@ allprojects {
     }
 
     project.ext {
-        buildToolsVersion      = "29.0.1"
-        minSdkVersion          = 23
-        targetSdkVersion       = 29
-        compileSdkVersion      = 29
-        retrofitVersion        = "2.6.0"
-        retrofitGsonVersion    = "2.6.0"
+        buildToolsVersion       = "29.0.1"
+        minSdkVersion           = 23
+        targetSdkVersion        = 29
+        compileSdkVersion       = 29
+        retrofitVersion         = "2.6.0"
+        retrofitGsonVersion     = "2.6.0"
+        daggerVersionVersion    = "2.20"
+        daggerSupportVersion    = "2.20"
+        daggerProcessorVersion  = "2.20"
+        daggerCompilerVersion   = "2.20"
     }
 }
 
