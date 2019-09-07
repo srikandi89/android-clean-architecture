@@ -10,20 +10,15 @@ import dagger.Provides;
 
 @Module
 public class LoginModule {
-//    @Provides
-//    LoginRepository getLoginRepository() {
-//        return new LoginRepositoryImpl();
-//    }
-//
-//    @Provides
-//    LoginPresenter getLoginPresenter(LoginContract.LoginView view,
-//                                     LoginUseCase loginUseCase,
-//                                     SchedulersFacade schedulersFacade) {
-//        return new LoginPresenter(view, loginUseCase, schedulersFacade);
-//    }
+    @Provides
+    LoginRepository getLoginRepository() {
+        return new LoginRepositoryImpl();
+    }
 
     @Provides
-    LoginPresenter getLoginPresenter(LoginContract.LoginView view) {
-        return new LoginPresenter(view);
+    LoginPresenter getLoginPresenter(LoginContract.LoginView view,
+                                     LoginUseCase loginUseCase,
+                                     SchedulersFacade schedulersFacade) {
+        return new LoginPresenter(view, loginUseCase, schedulersFacade);
     }
 }

@@ -44,6 +44,13 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+
+        loginPresenter.stop();
+    }
+
+    @Override
     @OnClick(R.id.btn_sign_in)
     public void onLoginClicked() {
         // Show progress dialog
@@ -64,6 +71,9 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     @Override
     public void handleLoginResponse(LoginResponseEntity loginResponseSingle) {
         // decide what kind of ui action should be performed
+
+        Log.d(TAG, "Retrieved from rxjava stream");
+        Log.d(TAG, "Status Code : "+loginResponseSingle.getStatusCode());
     }
 
     @Override
