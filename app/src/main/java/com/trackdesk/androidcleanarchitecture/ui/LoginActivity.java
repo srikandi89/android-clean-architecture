@@ -55,7 +55,10 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     public void onLoginClicked() {
         // Show progress dialog
 
-        loginPresenter.authenticate(new LoginRequestEntity("username", "password"));
+        String username = etUsername.getText().toString();
+        String password = etPassword.getText().toString();
+
+        loginPresenter.authenticate(new LoginRequestEntity(username, password));
     }
 
     @Override

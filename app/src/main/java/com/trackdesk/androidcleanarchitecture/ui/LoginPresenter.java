@@ -29,8 +29,10 @@ public class LoginPresenter
     @Override
     public void authenticate(LoginRequestEntity requestEntity) {
         Log.d(TAG, "Authentication triggered");
+        Log.d(TAG, "Username: "+requestEntity.getUsername());
+        Log.d(TAG, "Password: "+requestEntity.getPassword());
 
-        loadAuthenticationResult(loginUseCase.execute(new LoginRequestEntity("username", "password")));
+        loadAuthenticationResult(loginUseCase.execute(requestEntity));
     }
 
     private void loadAuthenticationResult(Single<LoginResponseEntity> loginResponseSingle) {
