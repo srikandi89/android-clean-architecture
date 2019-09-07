@@ -8,11 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.trackdesk.androidcleanarchitecture.R;
+import com.trackdesk.domain.entities.LoginRequestEntity;
 import com.trackdesk.domain.entities.LoginResponseEntity;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import dagger.android.AndroidInjection;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.LoginView{
 
@@ -27,8 +31,12 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     @BindView(R.id.btn_sign_in)
     Button btnLogin;
 
+    @Inject
+    LoginPresenter loginPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -40,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     public void onLoginClicked() {
         // Show progress dialog
 
-        Log.d(TAG, "Login button clicked");
+        loginPresenter.authenticate(new LoginRequestEntity("username", "password"));
     }
 
     @Override

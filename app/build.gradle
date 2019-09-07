@@ -40,10 +40,11 @@ dependencies {
     implementation libs.constraintLayout
 
     // begin dagger section
+    implementation 'com.google.dagger:dagger:' + _daggerVersion
     implementation 'com.google.dagger:dagger-android:' + _daggerVersion
     implementation 'com.google.dagger:dagger-android-support:' + _daggerSupportVersion
-    annotationProcessor 'com.google.dagger:dagger-android-processor:' + _daggerProcessorVersion
     annotationProcessor 'com.google.dagger:dagger-compiler:' + _daggerCompilerVersion
+    annotationProcessor 'com.google.dagger:dagger-android-processor:' + _daggerProcessorVersion
     // end dagger section
 
     // begin framework dependencies section

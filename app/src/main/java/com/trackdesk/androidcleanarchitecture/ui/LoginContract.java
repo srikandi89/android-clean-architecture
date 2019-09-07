@@ -1,5 +1,6 @@
 package com.trackdesk.androidcleanarchitecture.ui;
 
+import com.trackdesk.domain.entities.LoginRequestEntity;
 import com.trackdesk.domain.entities.LoginResponseEntity;
 
 public interface LoginContract {
@@ -12,6 +13,6 @@ public interface LoginContract {
     }
 
     interface LoginPresenter {
-        void authenticate();
+        void authenticate(LoginRequestEntity requestEntity);
     }
 }

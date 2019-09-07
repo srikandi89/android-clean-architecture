@@ -1,2 +1,2 @@
-include ':app', ':data', ':domain', ':device'
+include ':app', ':data', ':domain', ':device', ':data'
 rootProject.name='AndroidCleanArchitecture'

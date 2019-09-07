@@ -20,6 +20,10 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
     }
 
     buildTypes {
@@ -40,6 +44,11 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:' + _retrofitVersion
     implementation 'com.squareup.retrofit2:converter-gson:' + _retrofitGsonVersion
     // end api client section
+
+    // begin rxjava section
+    implementation libs.rxJava
+    implementation libs.rxJavaAndroid
+    // end rxjava section
 
     // begin framework dependencies section
     implementation project(':domain')
